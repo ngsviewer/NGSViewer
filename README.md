@@ -1,9 +1,13 @@
 <!--- The following README.md sample file was adapted from https://gist.github.com/PurpleBooth/109311bb0361f32d87a2#file-readme-template-md by Gabriella Mosquera for academic use ---> 
 <!--- You may delete any comments in this sample README.md file. If needing to use as a .txt file then simply delete all comments, edit as needed, and save as a README.txt file --->
 
-# Project: NGSVIEWER
+# Master of Digital Innovation
+## DGIN 5201 Digital Transformation - Winter 2020/2021
+## Instructors: Vlado Keselj & Colin Conrad
+## Final Digital Innovation Project
 
-In this project we dish to prototype NGSVIEWER a web based GUI tool for the identification of genomic variants  individual sequencing data. Using this software, we hope scientist  can perform sophisticated variant detection by simply configuring several parameters in a friendly graphical user interface.
+
+In this project we wish to prototype NGSVIEWER a web based GUI tool for the identification of genomic variants  individual sequencing data. Using this software, we hope scientist  can perform sophisticated variant detection by simply configuring several parameters in a friendly graphical user interface.
 
 Spark and MongoDB are a fantastic opportunity to enhance R with big-processing and big-data features - all in open source!. We present a walkthrough to setup a working environment which will put Spark's parallel
 processing and Mongo's huge-data handling capabilities at your fingertips in R. We will discuss the main features of SparkR with MongoDB and provide a toy example.
@@ -27,13 +31,13 @@ processing and Mongo's huge-data handling capabilities at your fingertips in R. 
 
 ## Goals
 
-1) Platform to perform  variant detection by simply configuring several parameters in a friendly graphical user interface.
+1) Create a platform to perform  variant detection by simply configuring several parameters in a friendly graphical user interface.
 
-2) Report writing tool for pathological interpretation of NGS.
+2) Create a report writing tool for pathological interpretation of NGS.
 
 3) Facilitate  data archiving and retrieval.
 
-3) Visualization for teaching learners (med students, residents) about NGS, mutations, etc.
+3) Enable visualization for teaching learners (med students, residents) about NGS, mutations, etc.
 
 
 ## Execution Environment
@@ -125,54 +129,10 @@ The horizontal tabs represent the concepts as follows:
 * [HTML](https://html.com) - Building various page elements.
 
 
-## Sources Used
-
-If in completing your lab / assignment / project you used any interpretation of someone else's code, then provide a list of where the code was implement, how it was implemented, why it was implemented, and how it was modified. See the sections below for more details.
-
-### File Name
-
-*Lines ## - ##*
-
-```
-Copy and paste your code on lines mentioned 
-
-```
-
-The code above was created by adapting the code in [NAME](link) as shown below: 
-
-```
-Copy and paste the snippet of code you are referencing
-
-```
-
-- <!---How---> The code in [NAME](link) was implemented by...
-- <!---Why---> [NAME](link)'s Code was used because...
-- <!---How---> [NAME](link)'s Code was modified by...
-
-*Repeat as needed*
-
-### File Name
-
-*Lines ## - ##*
-
-```
-Copy and paste your code on lines mentioned 
-
-```
-
-The code above was created by adapting the code in [NAME](link) as shown below: 
-
-```
-Copy and paste the snippet of code you are referencing
-
-```
-
-- <!---How---> The code in [NAME](link) was implemented by...
-- <!---Why---> [NAME](link)'s Code was used because...
-- <!---How---> [NAME](link)'s Code was modified by...
 
 
 ## Acknowledgments
 
-* Vlado & Colins
-* Mike and  
+* Dr. Vlado Keselj - Course Instructor
+
+* Dr. Colin Conrad - Course Instructor 
