@@ -4,13 +4,11 @@
 # Master of Digital Innovation
 ## DGIN 5201 Digital Transformation - Winter 2020/2021
 ## Instructors: Vlado Keselj & Colin Conrad
-## Final Digital Innovation Project
+## Final Digital Innovation Project: Creating graphical user interface for Next Generation Sequencing data.
 
+In this project we wish to prototype NGSVIEWER a web based GUI tool for NGS data. Using this software, we hope scientists  can perform various actions by simply configuring several parameters in a friendly graphical user interface. 
 
-In this project we wish to prototype NGSVIEWER a web based GUI tool for the identification of genomic variants  individual sequencing data. Using this software, we hope scientist  can perform sophisticated variant detection by simply configuring several parameters in a friendly graphical user interface.
-
-Spark and MongoDB are a fantastic opportunity to enhance R with big-processing and big-data features - all in open source!. We present a walkthrough to setup a working environment which will put Spark's parallel
-processing and Mongo's huge-data handling capabilities at your fingertips in R. We will discuss the main features of SparkR with MongoDB and provide a toy example.
+Spark and MongoDB are a fantastic opportunity to enhance R. We present a prototype in this environment.
 
 * *Date Created*: 01/03/2021
 * *Last Modification Date*: 01/03/2021
@@ -99,22 +97,24 @@ The horizontal tabs represent the concepts as follows:
 
 ```
 1. Quality Control (QC) - did the sequencing perform appropriately?
-2. Variants - small mutations (point mutation, small insertion or deletion)
+2. Variant identification - small mutations (point mutation, small insertion or deletion)
 3. Copy number variations (CNVs) - gene amplifications (+ deletions?), e.g. HER2
 4. Fusions - gene fusions (e.g. BCR-ABL in CML; ALK, ROS1 in lung cancer)
-5. "Bam links" - links to raw sequencing data
+5. Knowledge base - links to raw sequencing data
 6. Report - interface for writing report (can search earlier reports)
+7. Setup.
+
 ```
 
 **Learner portal**
 
 ```
 1. Quality Control (QC) - did the sequencing perform appropriately?
-2. Variants - small mutations (point mutation, small insertion or deletion)
+2. Variant identification - small mutations (point mutation, small insertion or deletion)
 3. Copy number variations (CNVs) - gene amplifications (+ deletions?), e.g. HER2
 4. Fusions - gene fusions (e.g. BCR-ABL in CML; ALK, ROS1 in lung cancer)
-5. "Bam links" - links to raw sequencing data
-6. Report - interface for writing report (can search earlier reports)
+5. Knowledge base - links to raw sequencing data
+6. Report - interface for viewing the lab interpretation.
 ```
 
 
