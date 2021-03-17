@@ -1,0 +1,140 @@
+
+shinyjs::hidden(
+  tags$div(
+    
+    id = "dashboard_page_ui",
+    dashboardPage(
+      dashboardHeader(
+        title="NGS Viewer",
+        tags$li(
+          class="dropdown",
+          tags$button(
+            id = "submit_sign_out",
+            type = "button",
+            "Sign Out",
+            class = "btn-danger pull-right",
+            style = "color: white;"
+          )
+        )
+      ),skin = "purple",
+      
+      dashboardSidebar(
+        sidebarMenu(
+          id = 'dashboard_menu',
+                   menuItem("Introduction", tabName = "initial", icon = icon("power-off"),selected = T),
+                   menuItem("QC", tabName = "QC",icon=icon("balance-scale")),
+                   #menuItem("Variant Identification", tabName = "variants",icon=icon("dna")),
+                   #menuSubItem("Karyotype", tabName = "karyo",icon=icon("dna")),
+                   menuItem("Variant Identification", tabName = "variants",icon=icon("dna"),
+                   menuSubItem("Karyotype", tabName = "karyo",icon=icon("chart-bar")),
+                   menuSubItem("Mutation", tabName = "mutation",icon=icon("chart-bar")),
+                   menuSubItem("Identification", tabName = "table",icon=icon("chart-bar"))
+                   #menuSubItem("Frequency plot", tabName = "cnv4",icon=icon("chart-bar")),
+                   #menuSubItem("Circle plot", tabName = "cnv5",icon=icon("chart-bar")),
+                   #menuSubItem("Heatmap", tabName = "cnv6",icon=icon("chart-bar")),
+                   #menuSubItem("Aberration plot", tabName = "cnv7",icon=icon("chart-bar")),
+                   #menuSubItem("Diagnostic (Penalty selection)", tabName = "cnv8",icon=icon("chart-bar"))
+                   ),
+                   menuItem("Fusion ", tabName = "fusion",icon=icon("dna")
+                   #menuSubItem("Overall plot", tabName = "fus1",icon=icon("chart-bar")), 
+                   #menuSubItem("Fusion Reads Plot", tabName = "fus2",icon=icon("chart-bar")),
+                   #menuSubItem("Fusion plot", tabName = "fus3",icon=icon("chart-bar")),
+                   #menuSubItem("Fusion transcripts plot", tabName = "fus4",icon=icon("chart-bar")),
+                   #menuSubItem("Protein domain annotations", tabName = "fus5",icon=icon("chart-bar")),
+                   #menuSubItem("Fusion transcript graph plot", tabName = "fus6",icon=icon("chart-bar")),
+                   #menuSubItem("Reporting and filtering", tabName = "fus7",icon=icon("folder-open"))
+                   ),
+                   menuItem("Knowledge Base", tabName = "KM",icon=icon("atom")),
+          menuItem("Reporting", tabName = "report",  icon = icon("folder-open"))
+          #menuItem("Setup", tabName = "setup",icon=icon("cogs"))
+          )),
+   
+      dashboardBody(
+        tabItems(
+          tabItem(tabName = "initial", h1("Welcome to NGSViewer", align="center",style = "color:blue"),
+                  br(),
+                  
+                  column(12,offset = 3,selectInput("task", h2("Please select your task:"),
+                                   c(
+                                     "Review a case"="Review",
+                                     "New case" = "New"))),
+                  column(12,offset = 3,actionBttn(
+                    inputId = "initiate",
+                    label = "Get Started!",
+                    color = "success",
+                    style = "material-flat",
+                    icon = icon("play-circle")
+                  ))
+                  ),
+          #  tabItem(tabName = "mutation",
+          #          plotOutput('mutation'))
+          
+           tabItem(tabName = "mutation",
+                   
+                   fluidRow(
+                     column(3,offset = 1,selectInput("Chromosome",label ="Select Chromosome",
+                                 choices = as.list(unique(data$Chrom)),selected = NULL)),
+                    # column(3,offset = 1,selectInput("Gene",label ="Select Gene",
+                    #                                 choices = as.list(unique(data$Gene)),selected = NULL)),
+                     column(3,offset = 1,uiOutput("secondSelection"))
+                  ),
+                  fluidRow(
+                     plotOutput('mutation')),
+                   fluidRow(
+                     DT::dataTableOutput("selected.genes"))),
+          tabItem(tabName = "table",
+                  DT::dataTableOutput("banking.df_data"),
+                  br(),
+                  actionButton("viewBtn","View"),
+                  br(),
+                  actionButton("saveBtn","Save"),
+                  br()),
+          
+         # tabItem(tabName = "KM",
+         #         formattableOutput("GO"),
+         #         ),
+          tabItem(tabName = "karyo",
+                  fluidRow(column(3,offset = 1,selectInput("case",label ="Select case",
+                                                  choices = as.list(unique(data$UI)),selected = NULL))),
+                fluidRow(plotOutput('Karyotype')) 
+                  ),
+          tabItem(tabName = "summary",h2("Summary report", align="center",style = "color:navy") ),
+          tabItem(tabName = "KM", h2("Knowledge management",    align="center",style = "color:blue"),),
+          tabItem(tabName = "report", tabBox(title = "Interpretation of pathology results", id = "Report", width = 18,
+                 tabPanel("Patient details",
+                    fluidRow(
+                            column(3,offset = 1,textInput("firstName","First name:")),
+                            column(3,offset = 1,textInput("lastName","Last name:")),
+                            column(3, offset = 1,dateInput("DOB","DOB:")),
+                            column(3,offset = 1,textInput("sex","Sex:")),
+                            column(3, offset = 1,textInput("Address","Address:"))
+                            )),                      
+                  tabPanel("Clinical presentation",
+                           fluidRow(
+                                  column(3,offset = 1,textInput("requestDr", "Requesting doctor:")),
+                                  column(9,offset = 1,textInput("reason","Test Indication:")),
+                                  column(9,offset = 1,textAreaInput("additionalNotes","Additional notes:"))
+                                   )),
+                                             tabPanel("Interpretation",
+                                                      fluidRow(
+                  column(9,offset = 1,textAreaInput("limitations", "Limitations and Disclaimers (compulsory):", placeholder ="This section would describe the status of the result. Has it been validated? Is it research-use only? Are there
+                  known weaknesses? Is this study partial, in progress, complete, etc", width = "1000px"),verbatimTextOutput("value")),
+                  column(9,offset = 1,textAreaInput('results', 'Result Interpretation (compulsory):',placeholder ="This section summarises the laboratory findings. What were the results of testing? What are the biological and
+                  genetic implications of this result?",width = "1000px")),
+                  column(9,offset = 1,textAreaInput('carrier', 'Carrier status summary (optional):',placeholder ="Carrier Identification interpretation of all identified DNA Markers and/or Individual Alleles along with any
+                                known clinical information for the benefit of aiding clinicians in understanding the results overall",width = "1000px")),
+                  column(9,offset = 1,textAreaInput('interpretation', 'Clinical Interpretation (C ompulsory):',placeholder ="This section summarises the clinical significance (if any) of the laboratory findings. It can take into account
+                  Family History or Clinical History.",width = "1000px")),
+                  column(9,offset = 1,textAreaInput('interpretation', 'Conclusion (optional):',placeholder ="This is the final tie it all together field, if not already done so above",width = "1000px")),
+                                                        
+                  column(3,offset = 1,actionButton("saveButton", "Save report")),
+                  br(),
+                  br(),
+                  column(3,offset = 1,downloadButton("report", "Generate report"))
+                   ))
+                  ))
+          )
+      ))))
+
+
+
