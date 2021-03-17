@@ -8,10 +8,11 @@
 
 In this project we wish to prototype NGSVIEWER a web based GUI tool for NGS data. Using this software, we hope scientists  can perform various actions by simply configuring several parameters in a friendly graphical user interface. 
 
-Spark and MongoDB are a fantastic opportunity to enhance R. We present a prototype in this environment.
+
+The aim is to give a platform for the selection of the true mutations in the dataset.
 
 * *Date Created*: 01/03/2021
-* *Last Modification Date*: 01/03/2021
+* *Last Modification Date*: 03/17/2021
 
 ## Contributors
 
@@ -24,6 +25,7 @@ Spark and MongoDB are a fantastic opportunity to enhance R. We present a prototy
 * [Name](email@dal.ca) - *(Role)*
 * [Name](email@dal.ca) - *(Role)*
 * [Name](email@dal.ca) - *(Role)*--->
+
 
 
 
@@ -60,7 +62,7 @@ Operating System Linux Mint Cinnamon 18 (Ubuntu 16.04 LTS)
 Mongodb 3.2
 Oracle Java 1.8.0
 Spark 2.0.1 Prebuilt for Hadoop 2.7
-R version 4.0.3 (2020-10-10)
+R version 4.0.3 (2020-10-10) and the Various R packages.
 R studio 0.99.903
 
 ```
@@ -70,53 +72,30 @@ R studio 0.99.903
 
 The prototype  of  [NGSVIewer](https://ngsviewer.shinyapps.io/NGSViewer/),is accessible for in its most updated version.
 
+
 #### Authorization and authentication
 
-For trial, two users have been created. The two users are authorized to access different resources.
+Two factor authorization - using password and email is implemented. 
 
-**Staff:** This category of users represents the scientists who are able to view and edit the data e.g write the report. 
-```
-User:     Staff
-Password: Staff1
 
-```
 
-**Learner:** This category of users represents the learners who are only able to **View** data with no possibility to editing.
-
-```
-User:     Learner
-Password: Learner1
-
-```
 #### Tabs
 
 The horizontal tabs represent the concepts as follows: 
 
 
-**Staff portal**
-
 ```
+**User Interface**
+
+
 1. Quality Control (QC) - did the sequencing perform appropriately?
 2. Variant identification - small mutations (point mutation, small insertion or deletion)
-3. Copy number variations (CNVs) - gene amplifications (+ deletions?), e.g. HER2
-4. Fusions - gene fusions (e.g. BCR-ABL in CML; ALK, ROS1 in lung cancer)
-5. Knowledge base - links to raw sequencing data
-6. Report - interface for writing report (can search earlier reports)
-7. Setup.
+3. Copy number variations (CNVs)
+4. Fusions - gene fusions 
+5. Knowledge base 
+6. Report 
 
 ```
-
-**Learner portal**
-
-```
-1. Quality Control (QC) - did the sequencing perform appropriately?
-2. Variant identification - small mutations (point mutation, small insertion or deletion)
-3. Copy number variations (CNVs) - gene amplifications (+ deletions?), e.g. HER2
-4. Fusions - gene fusions (e.g. BCR-ABL in CML; ALK, ROS1 in lung cancer)
-5. Knowledge base - links to raw sequencing data
-6. Report - interface for viewing the lab interpretation.
-```
-
 
 
 ## Built With
@@ -124,11 +103,109 @@ The horizontal tabs represent the concepts as follows:
 <!--- Provide a list of the frameworks used to build this application, your list should include the name of the framework used, the url where the framework is available for download and what the framework was used for, see the example below --->
 
 * [R](https://www.r-project.org) - Develop functionality, data access and archiving.
+
+R packages:
+
+
+
+* shiny
+
+Winston Chang, Joe Cheng, JJ Allaire, Carson Sievert, Barret Schloerke, Yihui Xie, Jeff
+Allen, Jonathan McPherson, Alan Dipert and Barbara Borges (2021). shiny: Web
+Application Framework for R. R package version 1.6.0.
+https://CRAN.R-project.org/package=shiny
+
+* shinyjs
+
+Dean Attali (2020). shinyjs: Easily Improve the User Experience of Your Shiny Apps in
+Seconds. R package version 2.0.0. https://CRAN.R-project.org/package=shinyjs
+
+*  DT
+
+Yihui Xie, Joe Cheng and Xianying Tan (2021). DT: A Wrapper of the JavaScript Library
+'DataTables'. R package version 0.17. https://CRAN.R-project.org/package=DT
+
+* shinydashboard
+
+Winston Chang and Barbara Borges Ribeiro (2018). shinydashboard: Create Dashboards with
+'Shiny'. R package version 0.7.1. https://CRAN.R-project.org/package=shinydashboard
+
+*  sodium
+
+Jeroen Ooms (2017). sodium: A Modern and Easy-to-Use Crypto Library. R package version
+1.1. https://CRAN.R-project.org/package=sodium
+
+*  rhandsontable
+
+Jonathan Owen (2018). rhandsontable: Interface to the 'Handsontable.js' Library. R
+package version 0.3.7. https://CRAN.R-project.org/package=rhandsontable
+
+*  data.table
+
+Matt Dowle and Arun Srinivasan (2021). data.table: Extension of `data.frame`. R package
+version 1.14.0. https://CRAN.R-project.org/package=data.table
+
+*  formattable
+
+Kun Ren and Kenton Russell (2021). formattable: Create 'Formattable' Data Structures. R
+package version 0.2.1. https://CRAN.R-project.org/package=formattable
+
+*  shinyWidgets
+
+Victor Perrier, Fanny Meyer and David Granjon (2021). shinyWidgets: Custom Inputs
+Widgets for Shiny. R package version 0.6.0.
+https://CRAN.R-project.org/package=shinyWidgets
+
+*  g3viz
+
+Xin Guo (2021). g3viz: Interactively Visualize Genetic Mutation Data using a
+Lollipop-Diagram. R package version 1.1.4. https://CRAN.R-project.org/package=g3viz
+
+* rtracklayer
+
+M. Lawrence, R. Gentleman, V. Carey: "rtracklayer: an {R} package for interfacing with
+  genome browsers". Bioinformatics 25:1841-1842.
+
+* trackViewer
+
+Ou J. Zhu L. trackViewer: a Bioconductor package for interactive and integrative
+visualization of multi-omics data. Nature Methods 16, 453–454 (2019)
+
+
+* tidyverse
+
+Wickham et al., (2019). Welcome to the tidyverse. Journal of Open Source Software,
+4(43), 1686, https://doi.org/10.21105/joss.01686
+
+* stringi
+
+Gagolewski M. and others (2020). R package stringi: Character string processing
+facilities. http://www.gagolewski.com/software/stringi/.
+
+*  stringr
+
+Hadley Wickham (2019). stringr: Simple, Consistent Wrappers for Common String
+Operations. R package version 1.4.0. https://CRAN.R-project.org/package=stringr
+
+*  karyoploteR
+ 
+Gel B, Serra E (2017). "karyoploteR : an R / Bioconductor package to plot customizable
+genomes displaying arbitrary data." _Bioinformatics_, *33*(19), 3088-3090. doi:
+  10.1093/bioinformatics/btx346 (URL: https://doi.org/10.1093/bioinformatics/btx346).
+
+*  BiocManager
+
+Martin Morgan (2019). BiocManager: Access the Bioconductor Project Package Repository.
+R package version 1.30.10. https://CRAN.R-project.org/package=BiocManager
+
+*  mongolite
+
+Ooms J (2014). “The jsonlite Package: A Practical and Consistent Mapping Between JSON Data 
+and R Objects.” arXiv:1403.2805 [stat.CO]. https://arxiv.org/abs/1403.2805.
+
 * [Rstudio](https://rstudio.com) - Code editor used.
 * [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) - Used for page styling and formating.
 * [HTML](https://html.com) - Building various page elements.
-
-
 
 
 ## Acknowledgments
