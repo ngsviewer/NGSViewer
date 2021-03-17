@@ -1,0 +1,14 @@
+"","Gene","Chrom","Start","End","Impact","Ref","Alt","AA","Clinvar.Disease","Num.Times.in.Database","Date"
+"1","NRAS",1,115256450,115256451,"Missense_Mutation","edwin","T","p.Ser87Asn","None",12,2021-03-14 13:49:07
+"2","KRAS",12,25398283,25398284,"Missense_Mutation","C","T","p.Gly12Asp","Carcinoma_of_pancreas|Neoplasm_of_stomach|Epidermal_nevus|Nevus_sebaceous|Epidermal_nevus_syndrome|Juvenile_myelomonocytic_leukemia|RAS-associated_autoimmune_leukoproliferative_disorder|Non-small_cell_lung_cancer|Neoplasm_of_ovary",78,2021-03-14 13:49:08
+"3","PIK3CA",3,178952081,178952082,"Missense_Mutation","C","T","p.Ala1046Val","None",12,2021-03-14 13:49:09
+"4","EGFR",7,55242466,55242485,"Missense_Mutation","AATTAAGAGAAGCAACATC","T","","Tyrosine_kinase_inhibitor_response",33,2021-03-14 13:49:10
+"5","EGFR",7,55242484,55242485,"Missense_Mutation","C","T","p.Ser752Phe","None",35,2021-03-14 13:49:11
+"6","EGFR",7,55241704,55241705,"Silent","T","C","p.Leu718Pro","None",8,2021-03-14 13:49:12
+"7","EGFR",7,55249019,55249020,"Missense_Mutation","A","G","p.His773Arg","None",227,2021-03-14 13:49:13
+"8","BRAF",7,140453135,140453136,"Missense_Mutation","A","T","p.Val600Glu","Carcinoma_of_colon|Papillary_thyroid_carcinoma|Astrocytoma\x2c_low-grade\x2c_somatic|Germ_cell_tumor\x2c_nonseminomatous|Non-small_cell_lung_cancer|Malignant_melanoma|not_provided|Cardio-facio-cutaneous_syndrome",66,2021-03-14 13:49:14
+"9","BRAF",7,140453135,140453137,"Silent","AC","TT","p.Val600Lys","None",37,2021-03-14 13:49:15
+"10","BRAF",7,140453136,140453137,"Missense_Mutation","C","T","p.Val600Met","Non-small_cell_lung_cancer",41,2021-03-14 13:49:16
+"11","KRAS",12,25378647,25378648,"Silent","T","C","p.Lys117Arg","None",4,2021-03-14 13:49:17
+"12","KRAS",12,25378647,25378648,"Nonsense_Mutation","T","C","p.Lys117Arg","None",4,2021-03-14 13:49:18
+"13","NRAS",1,115258746,115258747,"Silent","C","T","p.Gly12Asp","Epidermal_nevus|Juvenile_myelomonocytic_leukemia|not_provided",11,2021-03-14 13:49:19
